@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Button, Checkbox, Form } from "semantic-ui-react";
+import axios from "axios";
+
 
 export default function Create() {
   const [name, setName] = useState("");
@@ -7,6 +9,13 @@ export default function Create() {
 
   console.log(name);
   console.log(asal);
+
+  const sendDataToAPI  = () => {
+    axios.post('http://127.0.0.1:8000/api/', {
+        name,
+        asal
+    })
+  }
   return (
     <div>
       <Form>
@@ -18,7 +27,7 @@ export default function Create() {
           <label>Asal Siswa</label>
           <input name="asal" onChange={(e) => setAsal(e.target.value)} placeholder="Last Name" />
         </Form.Field>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" onClick={sendDataToAPI}>Submit</Button>
       </Form>
     </div>
   );
