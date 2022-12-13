@@ -30,10 +30,10 @@ export default function Read() {
                 <Table.Cell>{data.name} </Table.Cell>
                 <Table.Cell>{data.asal} </Table.Cell>
                 <Table.Cell>
-                    <Button>Edit</Button>
+                    <Button color="purple">Edit</Button>
                 </Table.Cell>
                 <Table.Cell>
-                    <Button>Hapus</Button>
+                    <Button color="red">Hapus</Button>
                 </Table.Cell>
               </Table.Row>
             );
